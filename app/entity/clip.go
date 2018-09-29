@@ -22,7 +22,7 @@ func NewClip(clipRepo repo.IClip) Clip {
 
 func (c clipEntity) GetLatestClips() (clips []models.Clip, err error) {
 	offset := 0
-	limit := 5
+	limit := 4
 	clips, err = c.clipRepo.GetLatest(offset, limit)
 	if err != nil {
 		err = uer.InternalError(err)

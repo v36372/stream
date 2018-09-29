@@ -3,6 +3,8 @@
 	<head>
 		<link href="https://vjs.zencdn.net/5.8.8/video-js.css" rel="stylesheet">
 		<link rel="stylesheet" href="/static/index.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/solid.css" integrity="sha384-VGP9aw4WtGH/uPAOseYxZ+Vz/vaTb1ehm1bwx92Fm8dTrE+3boLfF1SpAtB1z7HW" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/fontawesome.css" integrity="sha384-1rquJLNOM3ijoueaaeS5m+McXPJCGdr5HcA03/VHXxcp2kX2sUrQDmFc3jR5i/C7" crossorigin="anonymous">
 		<script src="https://vjs.zencdn.net/5.8.8/video.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.6.12/videojs-contrib-hls.js"></script>
 		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -46,8 +48,9 @@
 			</div>
 		</div>
 		<div class="col-md-12" style="margin-top:10px;">
+			<div class="col-md-9">
 			{{ range $index, $clip := $.Clips  }}
-			<div class="col-md-2">
+			<div class="col-md-3">
 				<a href="{{ $clip.Link }}" target="_blank">
 				<img src="{{ $clip.Thumbnail }}" class="rounded float-left">
 				</a>
@@ -55,8 +58,14 @@
 				{{ $clip.Name }}
 				</span>
 			</div>
-
 			{{ end }}
+			</div>
+			<div style="color:#f06a6a;" class="col-md-3">
+				<i class="fas fa-video"></i>
+				<span>See a stream hightlight?</span>
+				<a style="margin-left:10px;" class="btn btn-success" href="{{ .ClipServiceAddress }}" role="button">Clip it!</a>
+			</div>
+
 		</div>
 
 	</body>

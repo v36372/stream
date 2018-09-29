@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"stream/app/entity"
 	"stream/app/view"
+	"stream/config"
 
 	"github.com/gin-gonic/gin"
 )
@@ -13,7 +14,8 @@ type streamHandler struct {
 }
 
 type Presenter struct {
-	Clips []view.Clip
+	Clips              []view.Clip
+	ClipServiceAddress string
 }
 
 func (h streamHandler) Index(c *gin.Context) {
@@ -27,5 +29,6 @@ func (h streamHandler) Index(c *gin.Context) {
 	}
 
 	presenter.Clips = view.NewClips(clips)
+	presenter.ClipServiceAddress = config.Get().ClipService.Address
 	c.HTML(200, "index.html", presenter)
 }
