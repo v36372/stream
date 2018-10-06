@@ -50,7 +50,7 @@
 		<div class="col-md-12" style="margin-top:10px;">
 			<div class="col-md-9">
 			{{ range $index, $clip := $.Clips  }}
-			<div class="col-md-3">
+			<div class="col-md-3" style="padding-left:0;">
 				<a href="{{ $clip.Link }}" target="_blank">
 				<img src="{{ $clip.Thumbnail }}" class="rounded float-left">
 				</a>
@@ -63,7 +63,7 @@
 			<div style="color:#f06a6a;" class="col-md-3">
 				<i class="fas fa-video"></i>
 				<span>See a stream hightlight?</span>
-				<a style="margin-left:10px;" class="btn btn-success" href="{{ .ClipServiceAddress }}" role="button">Clip it!</a>
+				<a style="margin-left:10px;" class="btn btn-success" href="{{ .ClipServiceAddress }}" target="_blank" role="button">Clip it!</a>
 			</div>
 
 		</div>
